@@ -12,17 +12,35 @@
 <body>
 
     <div id="banner">
-        <p> THE WEATHER APP </p>
-        <div class="buscador"></div>
+
+        <h1> THE WEATHER APP </h1>
         <input id="placeholder" type="text" placeholder="  Ingresá tu ciudad">
         <button>BUSCAR</button>
 
     </div>
 
     <div id="contenido">
+        <div class="hoy">
+            <div class="ciudad"> Buenos Aires </div>
+            <div class="dia"> Hoy </div>
+            <img class="grafico" src="http://cdn.apixu.com/weather/64x64/day/359.png">
+            <div class="temp">
+                <span class="min"> Máxima </span>
+                <span class="max"> Mínima </span>
+            </div>
+        </div>
 
-        <div id="arriba">
-            <div class="hoy">
+        <div id="todos">
+            <div id="individual" class="mañana">
+                <div class="dia"> Mañana </div>
+                <img class="grafico" src="http://cdn.apixu.com/weather/64x64/day/359.png">
+                <div class="temp">
+                    <div class="min"> Máxima </div>
+                    <div class="max"> Mínima </div>
+                </div>
+            </div>
+
+            <div id="individual" class="dia3">
                 <div class="dia"> Hoy </div>
                 <img class="grafico" src="http://cdn.apixu.com/weather/64x64/day/359.png">
                 <div class="temp">
@@ -31,7 +49,7 @@
                 </div>
             </div>
 
-            <div id="todos" class="mañana">
+            <div id="individual" class="dia4">
                 <div class="dia"> Hoy </div>
                 <img class="grafico" src="http://cdn.apixu.com/weather/64x64/day/359.png">
                 <div class="temp">
@@ -40,7 +58,7 @@
                 </div>
             </div>
 
-            <div  id="todos" class="dia3">
+            <div id="individual" class="dia5">
                 <div class="dia"> Hoy </div>
                 <img class="grafico" src="http://cdn.apixu.com/weather/64x64/day/359.png">
                 <div class="temp">
@@ -48,27 +66,6 @@
                     <span class="max"> Mínima </span>
                 </div>
             </div>
-
-            <div id="todos" class="dia4">
-                <div class="dia"> Hoy </div>
-                <img class="grafico" src="http://cdn.apixu.com/weather/64x64/day/359.png">
-                <div class="temp">
-                    <span class="min"> Máxima </span>
-                    <span class="max"> Mínima </span>
-                </div>
-            </div>
-
-            <div id="todos" class="dia5">
-                <div class="dia"> Hoy </div>
-                <img class="grafico" src="http://cdn.apixu.com/weather/64x64/day/359.png">
-                <div class="temp">
-                    <span class="min"> Máxima </span>
-                    <span class="max"> Mínima </span>
-                </div>
-            </div>
-
-
-
         </div>
     </div>
 
