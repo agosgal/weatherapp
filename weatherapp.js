@@ -1,5 +1,6 @@
 // Agarro el buscador
 const buscador = document.getElementById("placeholder");
+const botonDeFiltro = document.querySelector("button")
 const ciudad = document.querySelector("#contenido .ciudad")
 const hoy = document.querySelector("#contenido .hoy .dia");
 const hoygraf = document.querySelector("#contenido .hoy .grafico");
@@ -22,11 +23,49 @@ const graf5 = document.querySelector("#contenido .dia5 .grafico");
 const min5 = document.querySelector("#contenido .dia5 .temp .min")
 const max5 = document.querySelector("#contenido .dia5 .temp .max");
 
+// Defino los días
+
+const weekdays = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb","Dom"];
+
+var diadehoy = new Date().getDay();
+var diade3 = diadehoy + 2;
+var diade4 = diadehoy + 3;
+var diade5 = diadehoy + 4;
+
+
+for (let i=0; i<weekdays.length; i++) {
+  if (diade3-1 == i) {
+    diade3 = (weekdays[i])
+  }
+}
+
+for (let i=0; i<weekdays.length; i++) {
+  if (diade4-1 == i) {
+    diade4 = (weekdays[i])
+  }
+}
+
+for (let i=0; i<weekdays.length; i++) {
+  if (diade5-1 == i) {
+    diade5 = (weekdays[i])
+  }
+}
+
 // Miro cuando hace enter
 buscador.addEventListener('keypress', function (event) {
     if (event.keyCode === 13) {
+      return traerDatos()
+}
+})
 
-// Saco el valor elegido
+// O cuando presiono el botón
+
+botonDeFiltro.onclick = function (event) {
+  traerDatos()
+}
+
+const traerDatos = () => {
+  // Saco el valor elegido
   const elegido = buscador.value;
   console.log(elegido);
 
@@ -47,21 +86,18 @@ prom.then(res => res.json())
     mañgraf.src = "http:"+ lugar[1].icon;
     mañmin.innerHTML = "Min: " + lugar[1].min;
     mañmax.innerHTML = "Max: " + lugar[1].max;
-    dia3.innerHTML = lugar[2].date;
+    dia3.innerHTML = diade3
     graf3.src = "http:"+ lugar[2].icon;
     min3.innerHTML = "Min: " + lugar[2].min;
     max3.innerHTML = "Max: " + lugar[2].max;
-    dia4.innerHTML = lugar[3].date;
+    dia4.innerHTML = diade4
     graf4.src = "http:"+ lugar[3].icon;
     min4.innerHTML = "Min: " + lugar[3].min;
     max4.innerHTML = "Max: " + lugar[3].max;
-    dia5.innerHTML = lugar[4].date;
+    dia5.innerHTML = diade5
     graf5.src = "http:"+ lugar[4].icon;
     min5.innerHTML = "Min: " + lugar[4].min;
     max5.innerHTML = "Max: " + lugar[4].max;
 }
 })
     }
-})
-
-
