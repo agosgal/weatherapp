@@ -28,9 +28,28 @@ const max5 = document.querySelector("#contenido .dia5 .temp .max");
 const weekdays = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb","Dom"];
 
 var diadehoy = new Date().getDay();
-var diade3 = diadehoy + 2;
-var diade4 = diadehoy + 3;
-var diade5 = diadehoy + 4;
+if (diadehoy <= 3) {
+  var diade3 = diadehoy + 2;
+  var diade4 = diadehoy + 3;
+  var diade5 = diadehoy + 4;  
+} else if (diadehoy == 4) {
+  diade3 = diadehoy +2;
+  diade4 = diadehoy + 3;
+  diade5 = diadehoy - 3
+} else if (diadehoy ==5) {
+  diade3 = diadehoy +2;
+  diade4 = diadehoy -3;
+  diade5 = diadehoy -4;
+} else if (diadehoy == 6) {
+  diade3 = diadehoy -6;
+  diade4 = diadehoy -5;
+  diade5 = diadehoy -4;
+} else if (diadehoy == 7) {
+  diade3 = diadehoy -6;
+  diade4 = diadehoy -5;
+  diade5 = diadehoy -4;
+}
+
 
 
 for (let i=0; i<weekdays.length; i++) {
